@@ -52,16 +52,16 @@
                 console.log(res);
 
                 //通过循环让数据中的id从1开始
-                var data = res.data;
-                for (var i = 0; i < data.length; i++) {
-                    data[i].id = i + 1;
-                }
+                // var data = res.data;
+                // for (var i = 0; i < data.length; i++) {
+                //     data[i].id = i + 1;
+                // }
 
                 return {
                     "code": 0,
                     "msg": "",
                     "count": res.size,
-                    data: data
+                    data: res.data
                 }
             }
             , cols: [[
@@ -134,8 +134,7 @@
 
                                                     //jquery方式
                                                     var m1 = parent.m;
-                                                    m1+="<dd><a class=\"layui-nav-item\" href=\"/employee\" target=\"admin-list\">"
-                                                        +name+"</a></dd>";
+                                                    m1+="<dd><a class=\"layui-nav-item\" href=\"/employee\" target=\"admin-list\">" +name+"</a></dd>";
                                                     parent.m = m1;
                                                     alert(parent.m);
 

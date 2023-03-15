@@ -27,6 +27,8 @@ public class DepartmentController {
         map.put("size", service.count());
         return ResponseUtil.general_response(departmentList, map);
     }
+
+//    根据员工id查询
     @GetMapping("/depts/{id}")
     public Object getDerpartments(@PathVariable("id") Integer id) {
         Department department = service.listOneById(id);

@@ -61,6 +61,8 @@ public class EmployeeController {
         map.put("size", employeeService.count());
         return ResponseUtil.general_response(employeeList, map);
     }
+
+    // 根据员工id查询
     @GetMapping("/employees/{id}")
     public Object getEmployee(@PathVariable("id") Integer id) {
         Employee employee = employeeService.listOneById(id);
