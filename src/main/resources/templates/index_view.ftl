@@ -5,7 +5,10 @@
     <title>首页</title>
     <script src="static/js/jquery-3.4.1.min.js"></script>
     <script src="static/layui/layui.js"></script>
-    <script>var m = "";</script>
+    <script>
+        var m = "";
+        var deptId = "111";
+    </script>
     <link rel="stylesheet" href="static/layui/css/layui.css" media="all">
 </head>
 
@@ -55,8 +58,10 @@
                                         // var m = "";
                                         var dept = result.data;
                                         // alert(dept[0].name);
+                                        // alert(dept[0].id);
                                         $.each(dept, function (i) {
-                                            m += "<dd><a class=\"layui-nav-item\" href=\"/employee\" target=\"admin-list\">" + dept[i].name + "</a></dd>";
+                                            // m += "<dd><a class=\"layui-nav-item\" href=\"/select\" target=\"admin-list\">" + dept[i].name + "</a></dd>";
+                                            m += "<dd><a class=\"layui-nav-item\" href=\"/select/" +dept[i].id+ "\" target=\"admin-list\">" + dept[i].name + "</a></dd>";
                                         });
                                         // m+="</dd>";
                                         $("#datatable").append(m);
@@ -67,7 +72,7 @@
                                 });
                             });
                         </script>
-                        <#--                        <dd><a class="layui-nav-item" href="/employee" target="admin-list">人事部</a></dd>-->
+
                         <#--                        <dd><a class="layui-nav-item" href="/employee" target="admin-list">研发部</a></dd>-->
                     </dl>
                 </li>

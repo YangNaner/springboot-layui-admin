@@ -64,7 +64,7 @@
 
 <script type="text/html" id="toolbar">
     <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm" lay-event="addPost">添加公告</button>
+        <button class="layui-btn layui-btn-sm" lay-event="addPost">添加日志</button>
     </div>
 </script>
 
@@ -78,7 +78,7 @@
     var json;
     function layerFunc(row) {
         layer.open({
-            title: "公告 " + row.title,
+            title: "日志 " + row.title,
             content: '#post-detail',
             offset: 'c',
             area: ["500px", "300px"],
@@ -105,11 +105,11 @@
             }
             ,cols: [[
                 {field:'id', width:60, title: 'ID'},
-                {field:'title', width:200, title: '公告名称', templet: function (row) {
+                {field:'title', width:200, title: '日志名称', templet: function (row) {
                         return row.title;
                     }},
-                {field:'content', width:400, title:'公告内容'},
-                {field:'username', width:150, title: '公告人', templet: function (row) {
+                {field:'content', width:400, title:'日志内容'},
+                {field:'username', width:150, title: '日志人', templet: function (row) {
                         if (row.username == null ) return "无此用户";
                         return row.username;
                     }},
@@ -128,7 +128,7 @@
             var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
             var tr = obj.tr; //获得当前行 tr 的DOM对象
             if(layEvent === 'del'){ //删除
-                layer.confirm('删除公告' + data.title + '?', {skin: 'layui-layer-molv',offset:'c', icon:'0'},function(index){
+                layer.confirm('删除日志' + data.title + '?', {skin: 'layui-layer-molv',offset:'c', icon:'0'},function(index){
                     obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
                     layer.close(index);
                     //向服务端发送删除指令
@@ -167,7 +167,7 @@
                 };
                 json = JSON.stringify(obj.data);
                 layer.open({
-                    title: '编辑公告',
+                    title: '编辑日志',
                     content: 'static/html/layers/post-update.html',
                     type: 2,
                     //content: $("#post-insert").text(),
@@ -186,7 +186,7 @@
                 case 'addPost':
 
                     layer.open({
-                        title: '新建公告',
+                        title: '新建日志',
                         content: $("#post-insert").text(),
                         offset: 'c',
                         area: ["500px", "300px"],
@@ -237,9 +237,9 @@
                                             table.reload("post-table",{
                                                 data:dataBak   // 将新数据重新载入表格
                                             });
-                                            layer.msg('新建公告成功', {icon: 1});
+                                            layer.msg('新建日志成功', {icon: 1});
                                         } else {
-                                            layer.msg('新建公告失败', {icon: 2});
+                                            layer.msg('新建日志失败', {icon: 2});
                                         }
                                     }
                                 });

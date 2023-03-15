@@ -136,7 +136,7 @@
                                                     var m1 = parent.m;
                                                     m1+="<dd><a class=\"layui-nav-item\" href=\"/employee\" target=\"admin-list\">" +name+"</a></dd>";
                                                     parent.m = m1;
-                                                    alert(parent.m);
+                                                    // alert(parent.m);
 
                                                 } else {
                                                     layer.msg('新建部门失败', {icon: 2});
