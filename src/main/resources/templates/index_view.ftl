@@ -59,8 +59,8 @@
                                         // alert(dept[0].name);
                                         // alert(dept[0].id);
                                         $.each(dept, function (i) {
-                                            // m += "<dd><a class=\"layui-nav-item\" href=\"/select\" target=\"admin-list\">" + dept[i].name + "</a></dd>";
-                                            m += "<dd><a class=\"layui-nav-item\" href=\"/select/" +dept[i].id+ "\" target=\"admin-list\">" + dept[i].name + "</a></dd>";
+                                            m += "<dd><a class=\"layui-nav-item\" href=\"/select\" target=\"admin-list\">" + dept[i].name + "</a></dd>";
+                                            // m += "<dd><a class=\"layui-nav-item\" href=\"/select/" +dept[i].id+ "\" target=\"admin-list\">" + dept[i].name + "</a></dd>";
                                         });
                                         // m+="</dd>";
                                         $("#datatable").append(m);
@@ -78,8 +78,8 @@
 
                 <li class="layui-nav-item"><a href="/position" target="admin-list">职位管理</a></li>
                 <li class="layui-nav-item"><a href="/employee" target="admin-list">员工管理</a></li>
-                <li class="layui-nav-item"><a href="/post" target="admin-list">公告管理</a></li>
-                <li class="layui-nav-item"><a href="/download" target="admin-list">下载中心</a></li>
+                <li class="layui-nav-item"><a href="/post" target="admin-list">日志管理</a></li>
+<#--                <li class="layui-nav-item"><a href="/download" target="admin-list">下载中心</a></li>-->
             </ul>
         </div>
     </div>
