@@ -7,7 +7,6 @@
     <script src="static/layui/layui.js"></script>
     <script>
         var m = "";
-        var deptId = "111";
     </script>
     <link rel="stylesheet" href="static/layui/css/layui.css" media="all">
 </head>
