@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.geek51.dao.MyMapper">
+    <resultMap id="BaseResultMap" type="cn.geek51.domain.Employee">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sex" jdbcType="BIT" property="sex"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="education" jdbcType="VARCHAR" property="education"/>
+        <result column="idcard" jdbcType="VARCHAR" property="idcard"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
+        <association property="position" javaType="cn.geek51.domain.Position" column="position_id"
+                     select="cn.geek51.domain.Position.selectOneByPrimaryKey"/>
+        <association property="department" javaType="cn.geek51.domain.Department" column="dept_id"
+                     select="cn.geek51.domain.Department.selectOneByPrimaryKey"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, name, sex, phone, email, education, idcard, address, position_id, dept_id, created_time
+    </sql>
+    <select id="selectByDepartmentId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM employee
+        WHERE dept_id = #{department}
+    </select>
+
+
+</mapper>
